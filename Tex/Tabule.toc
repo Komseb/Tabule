@@ -1,10 +1,10 @@
 \babel@toc {czech}{}\relax 
 \contentsline {section}{\numberline {1}Úvod}{3}{section.1}%
 \contentsline {section}{\numberline {2}Charakteristika zvolené příležitosti s ohledem na gastronomii}{4}{section.2}%
-\contentsline {section}{\numberline {3}Sestavení menu}{5}{section.3}%
-\contentsline {section}{\numberline {4}Objednávka slavnostní hostiny}{6}{section.4}%
-\contentsline {section}{\numberline {5}Potvrzení objednávky}{7}{section.5}%
-\contentsline {section}{\numberline {6}Obecný pracovní příkaz}{8}{section.6}%
-\contentsline {section}{\numberline {7}Pracovní příkaz - kuchyně}{10}{section.7}%
-\contentsline {section}{\numberline {8}Pracovní příkaz - obsluha}{11}{section.8}%
-\contentsline {section}{\numberline {9}Nákres couvertu, legenda}{12}{section.9}%
+\contentsline {section}{\numberline {3}Sestavení menu}{6}{section.3}%
+\contentsline {section}{\numberline {4}Objednávka slavnostní hostiny}{8}{section.4}%
+\contentsline {section}{\numberline {5}Potvrzení objednávky}{9}{section.5}%
+\contentsline {section}{\numberline {6}Obecný pracovní příkaz}{10}{section.6}%
+\contentsline {section}{\numberline {7}Pracovní příkaz - kuchyně}{13}{section.7}%
+\contentsline {section}{\numberline {8}Pracovní příkaz - obsluha}{14}{section.8}%
+\contentsline {section}{\numberline {9}Nákres couvertu, legenda}{15}{section.9}%

@@ -1,0 +1,229 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\begin{document}
+
+% -----------------------------------------------------------------------------
+% 1. STRANA - Titulní strana
+% -----------------------------------------------------------------------------
+\thispagestyle{empty}
+
+\begin{minipage}[t]{0.5\textwidth}
+    \includegraphics[width=\linewidth]{logo.png}
+\end{minipage}
+
+\vspace*{8cm}
+
+\begin{center}
+    {\Huge \textbf{Simulace dělostřelecké palby - DroneWar}} \\[0.5cm]
+    {\Large \textit{KIV/UPG Semestrální práce}}
+\end{center}
+
+\vfill
+
+\begin{flushleft}
+    \begin{tabular}{ll}
+        studenti: & \textbf{Jaroslav Vaněček} \& \textbf{Bořek Dundr} \\
+        osobní čísla: & \textbf{A24B0284P} \& \textbf{A24B0096P} \\
+        emaily: & \textbf{jvanecek@students.zcu.cz} \& \textbf{bdundr@students.zcu.cz} \\
+        datum: & \today
+    \end{tabular}
+\end{flushleft}
+
+\newpage
+
+% -----------------------------------------------------------------------------
+% 2. STRANA - Úvod, Technologie
+% -----------------------------------------------------------------------------
+\tableofcontents
+\newpage
+
+\setcounter{page}{1}
+
+\section{Úvod}
+Tato dokumentace popisuje semestrální práci z předmětu KIV/UPG, jejímž cílem bylo vytvořit desktopovou aplikaci pro simulaci dělostřelecké palby. Aplikace \textbf{DroneWar} umožňuje uživateli ovládat kanón (tank) v 3D terénu a snažit se zasáhnout pohybující se dron. Simulace zahrnuje fyzikální výpočty trajektorie střely, vliv větru a detekci kolizí s terénem či cílem.
+
+Aplikace je navržena jako multiplatformní desktopová aplikace s využitím moderního frameworku Avalonia UI, který umožňuje běh na Windows, Linuxu i macOS.
+
+
+
+
+% -----------------------------------------------------------------------------
+% 3. STRANA - Architektura, Struktura projektu
+% -----------------------------------------------------------------------------
+
+\section{Architektura aplikace}
+Aplikace je navržena s důrazem na oddělení logiky simulace od prezentační vrstvy (Separation of Concerns).
+
+\begin{itemize}
+    \item \textbf{Model (Datová vrstva):} Třídy definované v \texttt{objects.cs} (např. \texttt{Scene}, \texttt{Terrain}, \texttt{Cannon}, \texttt{Drone}) drží stav aplikace. Jsou to čisté datové struktury (POCO) bez závislosti na UI.
+    \item \textbf{Logika (Physics \& Loader):}
+    \begin{itemize}
+        \item \texttt{Physics.cs}: Obsahuje veškerou fyzikální logiku – výpočet balistické křivky, aplikaci větru a detekci kolizí. Třída je statická a bezstavová (pure functions), což usnadňuje testování.
+        \item \texttt{SceneLoader.cs}: Zajišťuje načítání dat ze souborů a jejich deserializaci do objektového modelu.
+    \end{itemize}
+    \item \textbf{View (Prezentační vrstva):}
+    \begin{itemize}
+        \item \texttt{MainWindow.axaml}: Hlavní okno aplikace definované v XAML.
+        \item \texttt{BattleField.axaml}: Vlastní ovládací prvek (UserControl), který se stará o vizualizaci herního světa. Využívá \textbf{Game Loop} vzor (pomocí \texttt{DispatcherTimer} nebo render loopu Avalonie) pro plynulé překreslování scény při letu střely nebo pohybu dronu.
+    \end{itemize}
+\end{itemize}
+
+\section{Fyzikální model}
+Jádrem simulace je třída \texttt{Physics}, která implementuje numerické metody pro výpočet pohybu těles.
+
+\subsection*{Výpočet trajektorie (Eulerova metoda)}
+Pro simulaci balistické křivky je použita \textbf{Eulerova integrační metoda}. V každém časovém kroku $\Delta t$ (definovaném v \texttt{PhysicsConfig.IntegrationTimeStep}) se aktualizuje poloha a rychlost střely:
+
+\begin{enumerate}
+    \item \textbf{Aktualizace pozice:} $\vec{p}_{new} = \vec{p}_{old} + \vec{v} \cdot \Delta t$
+    \item \textbf{Aktualizace rychlosti:} $\vec{v}_{new} = \vec{v}_{old} + (\vec{g} + \vec{a}_{wind}) \cdot \Delta t$
+\end{enumerate}
+
+Kde $\vec{g}$ je gravitační zrychlení a $\vec{a}_{wind}$ je zrychlení způsobené odporem vzduchu a větrem, vypočítané jako:
+$$ \vec{a}_{wind} = (\vec{v}_{wind} - \vec{v}_{projectile}) \cdot C_{drag} $$
+Tento model umožňuje simulovat realistické chování střely, včetně snášení větrem.
+
+\subsection*{Detekce kolizí (HitTest)}
+Detekce zásahu je řešena ve dvou fázích:
+\begin{itemize}
+    \item \textbf{Kolize s terénem:} V každém kroku integrace se kontroluje, zda $Z$ souřadnice střely klesla pod úroveň terénu na daných souřadnicích $X, Y$. Výška terénu se získává z heightmapy (pole \texttt{altitudes}).
+    \item \textbf{Kolize s cílem (Dron):} Po dopadu střely (nebo v průběhu letu) se volá metoda \texttt{HitTest}, která vypočítá euklidovskou vzdálenost mezi bodem výbuchu a středem dronu. Pokud je vzdálenost menší než \texttt{ExplosionRadius}, je zásah vyhodnocen jako úspěšný.
+\end{itemize}
+
+\section{Struktura projektu}
+Adresářová struktura zdrojového kódu (\texttt{src/DroneWar/}) je následující:
+
+\begin{itemize}
+    \item \texttt{Config/} - Statické konfigurační třídy (\texttt{GameplayConfig}, \texttt{PhysicsConfig}, \texttt{RenderingConfig}) pro snadnou úpravu parametrů hry.
+    \item \texttt{BattleField/} - Komponenty související s herní plochou.
+    \item \texttt{objects.cs} - Definice herních entit (Model).
+    \item \texttt{Physics.cs} - Výpočetní jádro simulace.
+    \item \texttt{SceneLoader.cs} - Načítání binárních souborů scény.
+    \item \texttt{TerrainColorer.cs} - Pomocná třída pro vizualizaci výškové mapy terénu.
+    \item \texttt{App.axaml} a \texttt{MainWindow.axaml} - Vstupní bod a hlavní okno UI.
+\end{itemize}
+
+\section{Uživatelské rozhraní (UI)}
+Uživatelské rozhraní aplikace je navrženo s důrazem na přehlednost a okamžitou zpětnou vazbu. Využívá konceptu "kontejnerizace" vizuálních prvků, kde je obrazovka rozdělena do tří logických vrstev (vykreslovaných na jedno plátno pomocí SkiaSharp):
+
+\begin{enumerate}
+    \item \textbf{Herní plocha (BattleField):} Hlavní kontejner zabírající celou plochu okna. Zobrazuje 2D vizualizaci terénu, pozici tanku, dronu a trajektorii střel.
+    \item \textbf{Indikátor větru:} Grafický element (šipka) v rohu obrazovky, který dynamicky ukazuje směr a sílu větru. Délka a směr šipky se mění v reálném čase podle aktuálních podmínek simulace.
+    \item \textbf{Legenda a Graf výšek:} Panel zobrazující barevnou škálu (histogram) použitou pro vizualizaci terénu. Uživatel tak snadno pozná, jaká barva odpovídá jaké nadmořské výšce.
+\end{enumerate}
+
+\section{Ovládání a Interakce}
+Aplikace podporuje kombinované ovládání pomocí klávesnice a myši, které je zpracováváno třídou \texttt{BattleFieldInputHandler}.
+
+\subsection*{Klávesnice}
+\begin{itemize}
+    \item \textbf{W / S}: Změna náměru kanónu (Zenit) nahoru/dolů.
+    \item \textbf{A / D}: Otáčení věže kanónu (Azimut) doleva/doprava.
+    \item \textbf{Mezerník (Space):} Vystřelení projektilu.
+    \item \textbf{P}: Pauza/Spuštění simulace.
+    \item \textbf{+ / -}: Zvýšení/Snížení úsťové rychlosti střely (síla výstřelu).
+\end{itemize}
+
+\subsection*{Myš}
+\begin{itemize}
+    \item \textbf{Levé tlačítko (LMB) + Tah:} Rychlé otáčení věže (změna azimutu).
+    \item \textbf{Kolečko myši:} Jemné ladění náměru (zenitu).
+    \item \textbf{Pravé tlačítko (RMB) + Kolečko:} Rychlá změna síly výstřelu.
+    \item \textbf{Pravé tlačítko (RMB) + Tah:} Posun mapy (Panning) pro prohlížení terénu.
+    \item \textbf{Dvojklik na tank (LMB):} Okamžitá střelba podle nastavení děla.
+\end{itemize}
+
+\section{Herní mechaniky}
+Kromě fyziky obsahuje aplikace několik klíčových herních mechanismů.
+
+\subsection*{Dynamický vítr}
+Vítr v simulaci není statický, ale mění se v čase, což zvyšuje obtížnost. Implementace (\texttt{ProcessWind}) využívá lineární interpolaci pro plynulý přechod mezi stavy větru.
+\begin{itemize}
+    \item Každá změna má náhodnou cílovou hodnotu a dobu trvání.
+    \item Algoritmus postupně interpoluje aktuální vektor větru k cílovému, což na UI vytváří efekt plynule se otáčející šipky.
+\end{itemize}
+
+\subsection*{Game Loop a Pauza}
+Aplikace využívá smyčku hry řízenou časovačem (\texttt{DispatcherTimer} s intervalem 20ms).
+\begin{itemize}
+    \item \textbf{Pauza (\texttt{TogglePause}):} Při aktivaci pauzy se zastaví aktualizace herního stavu.
+    \item \textbf{Vykreslování:} Metoda \texttt{InvalidateVisual()} je volána v každém tiknutí časovače, což vynutí překreslení celé scény pomocí \texttt{SKBattleFieldRenderer}.
+\end{itemize}
+
+% -----------------------------------------------------------------------------
+% 4. STRANA - Funkcionalita
+% -----------------------------------------------------------------------------
+
+\section{Funkcionalita aplikace}
+
+
+\subsection*{Načítání a Vizualizace}
+\begin{itemize}
+    \item \textbf{Načtení scény:} Uživatel může načíst připravenou scénu ze souboru. Aplikace validuje formát a verzi souboru.
+    \item \textbf{Zobrazení terénu:} Terén je vykreslen na základě výškových dat, přičemž barva terénu se mění podle nadmořské výšky (pomocí \texttt{TerrainColorer}), což uživateli pomáhá v orientaci.
+\end{itemize}
+
+\subsection*{Ovládání a Simulace}
+\begin{itemize}
+    \item \textbf{Ovládání kanónu:} Uživatel může měnit náměr (Zenit) a odměr (Azimut) kanónu a nastavovat sílu výstřelu (úsťovou rychlost).
+    \item \textbf{Fyzikální model:} Po výstřelu je vypočítána trajektorie balistické křivky. Výpočet bere v úvahu:
+    \begin{itemize}
+        \item Gravitační zrychlení.
+        \item Počáteční rychlost a úhel výstřelu.
+        \item Vliv větru, který střelu snáší do stran.
+    \end{itemize}
+    \item \textbf{Detekce kolizí:} V každém kroku simulace se kontroluje, zda střela nezasáhla terén (výška střely < výška terénu v daném bodě) nebo cíl (dron).
+\end{itemize}
+
+
+\section{Bonusové úkoly}
+Aplikace obsahuje řadu rozšířených funkcí nad rámec základního zadání.
+
+\subsection*{Proměnlivý vítr}
+Směr a síla větru se v průběhu času dynamicky mění. Změna není chaotická, ale plynulá.
+\begin{itemize}
+    \item Pokud například fouká vítr od západu rychlostí 10 m/s, nemůže se okamžitě změnit na východní vítr o rychlosti 20 m/s.
+    \item Mezi těmito stavy dochází k postupné interpolaci (lineární přechod) v čase, což je vizualizováno plynulým otáčením a změnou délky šipky indikátoru větru.
+\end{itemize}
+
+\subsection*{Zastavení času}
+Uživatel má možnost pozastavit simulaci (klávesa \textbf{P}).
+\begin{itemize}
+    \item V režimu pauzy se zastaví fyzikální výpočty (dron se nepohybuje, vítr se nemění).
+    \item V daný moment je uživatel schopen pouze zrušit pauzu (pouze stisknutí klávesy \textbf{P}).
+\end{itemize}
+
+\subsection*{Zvětšení a posun (Zoom \& Pan)}
+Pro lepší přehled o bojišti byly implementovány ovládací prvky pro manipulaci s pohledem:
+\begin{itemize}
+    \item \textbf{Zoom:} Uživatel může přibližovat a oddalovat pohled na mapu (kolečko myši nebo tlačítka +/- v UI).
+    \item \textbf{Pan:} Ve zvětšeném pohledu je možné posouvat mapu tažením myši se stisknutým pravým tlačítkem. To umožňuje detailní průzkum terénu a přesnější zaměření.
+\end{itemize}
+
+\subsection*{Jednoduchý editor statických scénářů}
+Součástí projektu je pomocný Python skript (\texttt{data/map\_generator.py}), který slouží jako externí editor scénářů.
+\begin{itemize}
+    \item \textbf{Generování terénu:} Umožňuje vytvořit nový terén buď náhodně (procedurální generování), nebo načtením grayscale heightmapy (obrázku), kde odstíny šedi odpovídají nadmořské výšce.
+    \item \textbf{Editace objektů:} Skript umožňuje přidávat, upravovat nebo odebírat herní objekty (dělo, dron) a nastavovat parametry prostředí (vítr).
+    \item \textbf{Kompatibilita:} Vygenerované soubory \texttt{.ter} jsou plně kompatibilní s hlavní aplikací (verze formátu 1).
+\end{itemize}
+
+\end{document}
