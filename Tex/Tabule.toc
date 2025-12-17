@@ -1,7 +1,7 @@
 \babel@toc {czech}{}\relax 
 \contentsline {section}{\numberline {1}Úvod}{3}{section.1}%
-\contentsline {section}{\numberline {2}Charakteristika zvolené příležitosti s ohledem na gastronomii}{4}{section.2}%
-\contentsline {section}{\numberline {3}Sestavení menu}{6}{section.3}%
+\contentsline {section}{\numberline {2}Charakteristika zvolené příležitosti}{5}{section.2}%
+\contentsline {section}{\numberline {3}Sestavení menu}{7}{section.3}%
 \contentsline {section}{\numberline {4}Objednávka slavnostní hostiny}{8}{section.4}%
 \contentsline {section}{\numberline {5}Potvrzení objednávky}{9}{section.5}%
 \contentsline {section}{\numberline {6}Obecný pracovní příkaz}{10}{section.6}%
