@@ -9,3 +9,5 @@
 \contentsline {subsection}{\numberline {2.6}Pracovní příkaz - kuchyně}{13}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Pracovní příkaz - obsluha}{14}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Nákres couvertu, legenda}{15}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Charakteristika celého menu}{16}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Žádanka na inventář}{17}{subsection.2.10}%

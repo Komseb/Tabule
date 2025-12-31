@@ -130,7 +130,7 @@
   
   <!-- LABELS -->
   <!-- 1 Plate --> <g transform="translate(440, 520)"><circle r="15" class="label-circle"/><text class="label-text">1</text></g>
-  
+  <!-- 12 Plate --> <g transform="translate(480, 480)"><circle r="15" class="label-circle"/><text class="label-text">12</text></g>
   <!-- Forks -->
   <!-- 2 --> <g transform="translate(280, 550)"><circle r="15" class="label-circle"/><text class="label-text">2</text></g>
   <!-- 3 --> <g transform="translate(240, 550)"><circle r="15" class="label-circle"/><text class="label-text">3</text></g>
