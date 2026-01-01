@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {1}Úvod}{3}{section.1}%
 \contentsline {section}{\numberline {2}Řešení}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Charakteristika zvolené příležitosti}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Sestavení menu}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Sestavení menu}{6}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Objednávka slavnostní hostiny}{8}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Potvrzení objednávky}{9}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Obecný pracovní příkaz}{10}{subsection.2.5}%
@@ -11,3 +11,7 @@
 \contentsline {subsection}{\numberline {2.8}Nákres couvertu, legenda}{15}{subsection.2.8}%
 \contentsline {subsection}{\numberline {2.9}Charakteristika celého menu}{16}{subsection.2.9}%
 \contentsline {subsection}{\numberline {2.10}Žádanka na inventář}{17}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Postup při servisu pokrmů a nápojů}{18}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Časový harmonogram}{20}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Vyúčtování}{21}{subsection.2.13}%
+\contentsline {section}{\numberline {3}Závěr}{22}{section.3}%
