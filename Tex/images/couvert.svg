@@ -58,12 +58,12 @@
       <path d="M53 50 L53 10 Q53 5 50 5 Q47 5 47 10 L47 50" fill="none" stroke="black" stroke-width="1" opacity="0.5"/>
   </g>
   <!-- 5. Lžíce (Spoon) -->
-  <g transform="translate(565, 400)">
+  <g transform="translate(599, 400)">
       <path d="M48 50 L48 95 Q48 100 50 100 Q52 100 52 95 L52 50 Z" fill="#333333" stroke="black" stroke-width="1"/>
       <ellipse cx="50" cy="30" rx="15" ry="22" fill="#C0C0C0" stroke="black" stroke-width="1"/>
   </g>
   <!-- 3. Předkrmový nůž (Starter Knife) -->
-  <g transform="translate(600, 400) scale(0.9)">
+  <g transform="translate(570, 400) scale(0.9)">
       <g transform="scale(0.85) translate(8, 8)">
           <path d="M47 50 L47 95 Q47 100 50 100 Q53 100 53 95 L53 50 Z" fill="#333333" stroke="black" stroke-width="1"/>
           <path d="M47 50 L47 10 Q47 5 50 5 Q53 5 53 10 L53 50 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
@@ -136,8 +136,8 @@
   
   <!-- Knives/Spoon (Shifted) -->
   <!-- 2 --> <g transform="translate(580, 550)"><circle r="15" class="label-circle"/><text class="label-text">2</text></g>
-  <!-- 5 --> <g transform="translate(615, 550)"><circle r="15" class="label-circle"/><text class="label-text">5</text></g>
-  <!-- 3 --> <g transform="translate(650, 550)"><circle r="15" class="label-circle"/><text class="label-text">3</text></g>
+  <!-- 5 --> <g transform="translate(650, 550)"><circle r="15" class="label-circle"/><text class="label-text">5</text></g>
+  <!-- 3 --> <g transform="translate(615, 550)"><circle r="15" class="label-circle"/><text class="label-text">3</text></g>
   <!-- 4 --> <g transform="translate(685, 550)"><circle r="15" class="label-circle"/><text class="label-text">4</text></g>
   
   <!-- Bread Plate 6 -->
