@@ -7,15 +7,17 @@
   </defs>
 
   <!-- CENTER -->
-  <!-- 20. Podložka (Placemat) -->
-  <g transform="translate(440, 450)">
-      <rect x="-65" y="-65" width="130" height="130" transform="rotate(45)" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4"/>
-  </g>
+  
 
   <!-- 1. Talíř (Single Plate) - R=85 -->
   <g transform="translate(440, 450)">
       <circle cx="0" cy="0" r="85" stroke="black" stroke-width="2" fill="white" />
       <circle cx="0" cy="0" r="60" stroke="black" stroke-width="1" fill="none" opacity="0.3" /> 
+  </g>
+
+  <!-- 20. Podložka (Placemat) -->
+  <g transform="translate(440, 450), scale(0.97)">
+      <rect x="-65" y="-65" width="130" height="130" transform="rotate(45)" fill="none" stroke="black" stroke-width="2" stroke-dasharray="4"/>
   </g>
 
   <!-- 10. Ubrousek (Napkin) -->
@@ -29,22 +31,22 @@
   </g>
 
   <!-- LEFT SIDE (Forks) - Kept wide as requested previously -->
-  <g transform="translate(240, 400)">
+  <g transform="translate(270, 400)">
       <path d="M48 55 L48 95 Q48 100 50 100 Q52 100 52 95 L52 55 Z" fill="#333333" stroke="black" stroke-width="1"/>
-      <path d="M38 25 Q38 55 50 55 Q62 55 62 25 L62 5 L59 5 L59 35 L57 35 L57 5 L54 5 L54 35 L52 35 L52 5 L49 5 L49 35 L47 35 L47 5 L44 5 L44 35 L42 35 L42 5 L38 5 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
+      <path d="M38 25 Q38 55 50 55 Q62 55 62 25 L62 5 L59 5 L59 35 L55 35 L55 5 L52 5 L52 35 L48 35 L48 5 L45 5 L45 35 L41 35 L41 5 L38 5 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
   </g>
-  <g transform="translate(200, 400) scale(0.9)">
+  <g transform="translate(230, 400) scale(0.9)">
+      <g transform="scale(0.85) translate(8, 8)">
+          <path d="M48 55 L48 95 Q48 100 50 100 Q52 100 52 95 L52 55 Z" fill="#333333" stroke="black" stroke-width="1"/>
+          <path d="M38 25 Q38 55 50 55 Q62 55 62 25 L62 5 L59 5 L59 35 L55 35 L55 5 L52 5 L52 35 L48 35 L48 5 L45 5 L45 35 L41 35 L41 5 L38 5 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
+      </g>
+  </g>
+  <!--g transform="translate(160, 400) scale(0.9)">
       <g transform="scale(0.85) translate(8, 8)">
           <path d="M48 55 L48 95 Q48 100 50 100 Q52 100 52 95 L52 55 Z" fill="#333333" stroke="black" stroke-width="1"/>
           <path d="M38 25 Q38 55 50 55 Q62 55 62 25 L62 5 L59 5 L59 35 L57 35 L57 5 L54 5 L54 35 L52 35 L52 5 L49 5 L49 35 L47 35 L47 5 L44 5 L44 35 L42 35 L42 5 L38 5 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
       </g>
-  </g>
-  <g transform="translate(160, 400) scale(0.9)">
-      <g transform="scale(0.85) translate(8, 8)">
-          <path d="M48 55 L48 95 Q48 100 50 100 Q52 100 52 95 L52 55 Z" fill="#333333" stroke="black" stroke-width="1"/>
-          <path d="M38 25 Q38 55 50 55 Q62 55 62 25 L62 5 L59 5 L59 35 L57 35 L57 5 L54 5 L54 35 L52 35 L52 5 L49 5 L49 35 L47 35 L47 5 L44 5 L44 35 L42 35 L42 5 L38 5 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
-      </g>
-  </g>
+  </g-->
 
   <!-- RIGHT SIDE (Knives, Spoon) - MOVED CLOSER -->
   <!-- Previous: 560, 600, 640, 680.
@@ -52,26 +54,26 @@
        Plate edge 485. 530 is 45 gap.
   -->
   <!-- 2. Masový nůž (Meat Knife) -->
-  <g transform="translate(530, 400)">
+  <g transform="translate(500, 400)">
       <path d="M47 50 L47 95 Q47 100 50 100 Q53 100 53 95 L53 50 Z" fill="#333333" stroke="black" stroke-width="1"/>
       <path d="M47 50 L47 10 Q47 5 50 5 Q53 5 53 10 L53 50 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
       <path d="M53 50 L53 10 Q53 5 50 5 Q47 5 47 10 L47 50" fill="none" stroke="black" stroke-width="1" opacity="0.5"/>
   </g>
   <!-- 5. Lžíce (Spoon) -->
-  <g transform="translate(599, 400)">
+  <g transform="translate(535, 400)">
       <path d="M48 50 L48 95 Q48 100 50 100 Q52 100 52 95 L52 50 Z" fill="#333333" stroke="black" stroke-width="1"/>
       <ellipse cx="50" cy="30" rx="15" ry="22" fill="#C0C0C0" stroke="black" stroke-width="1"/>
   </g>
   <!-- 3. Předkrmový nůž (Starter Knife) -->
-  <g transform="translate(570, 400) scale(0.9)">
+  <!--g transform="translate(570, 400) scale(0.9)">
       <g transform="scale(0.85) translate(8, 8)">
           <path d="M47 50 L47 95 Q47 100 50 100 Q53 100 53 95 L53 50 Z" fill="#333333" stroke="black" stroke-width="1"/>
           <path d="M47 50 L47 10 Q47 5 50 5 Q53 5 53 10 L53 50 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
           <path d="M53 50 L53 10 Q53 5 50 5 Q47 5 47 10 L47 50" fill="none" stroke="black" stroke-width="1" opacity="0.5"/>
       </g>
-  </g>
+  </g-->
   <!-- 4. Předkrmový nůž (2nd one) -->
-  <g transform="translate(635, 400) scale(0.9)">
+  <g transform="translate(570, 415) scale(0.9)">
       <g transform="scale(0.85) translate(8, 8)">
           <path d="M47 50 L47 95 Q47 100 50 100 Q53 100 53 95 L53 50 Z" fill="#333333" stroke="black" stroke-width="1"/>
           <path d="M47 50 L47 10 Q47 5 50 5 Q53 5 53 10 L53 50 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
@@ -80,12 +82,12 @@
   </g>
 
   <!-- TOP (Dessert) -->
-  <!-- 11. Dezertní vidlička -->
+  <!-- 8. Dezertní vidlička -->
   <g transform="translate(440, 320) rotate(-90) scale(0.8)">
       <g transform="translate(-50, -50)"> 
         <g transform="scale(0.7) translate(20, 20)">
            <path d="M48 55 L48 95 Q48 100 50 100 Q52 100 52 95 L52 55 Z" fill="#333333" stroke="black" stroke-width="1"/>
-           <path d="M38 25 Q38 55 50 55 Q62 55 62 25 L62 5 L59 5 L59 35 L57 35 L57 5 L54 5 L54 35 L52 35 L52 5 L49 5 L49 35 L47 35 L47 5 L44 5 L44 35 L42 35 L42 5 L38 5 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
+           <path d="M38 25 Q38 55 50 55 Q62 55 62 25 L62 5 L58 5 L58 35 L52 35 L52 5 L48 5 L48 35 L42 35 L42 5 L38 5 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
         </g>
       </g>
   </g>
@@ -102,59 +104,116 @@
     -->
   <!-- TOP LEFT -->
   <!-- 6. Pečivový talířek -->
-  <g transform="translate(130, 300) scale(1.0)"> 
+  <g transform="translate(160, 300) scale(1.0)"> 
       <circle cx="50" cy="50" r="35" stroke="black" stroke-width="2" fill="none" />
       <circle cx="50" cy="50" r="25" stroke="black" stroke-width="1" fill="none" stroke-dasharray="2" />
   </g>
+  <!-- 3. Předkrmový nůž (Starter Knife) -->
+  <g transform="translate(180, 305) scale(0.9)">
+      <g transform="scale(0.85) translate(8, 8)">
+          <path d="M47 50 L47 95 Q47 100 50 100 Q53 100 53 95 L53 50 Z" fill="#333333" stroke="black" stroke-width="1"/>
+          <path d="M47 50 L47 10 Q47 5 50 5 Q53 5 53 10 L53 50 Z" fill="#C0C0C0" stroke="black" stroke-width="1"/>
+          <path d="M53 50 L53 10 Q53 5 50 5 Q47 5 47 10 L47 50" fill="none" stroke="black" stroke-width="1" opacity="0.5"/>
+      </g>
+  </g>
+  <!-- 13. Menu -->
+  <g transform="translate(160, 420) scale(0.8)">
+      <rect x="0" y="0" width="60" height="90" fill="white" stroke="black" stroke-width="1.5" />
+      <path d="M10 20 L50 20 M10 35 L50 35 M10 50 L50 50 M10 65 L50 65 M10 80 L35 80" stroke="black" stroke-width="1" opacity="0.5" />
+  </g>
+  <!-- 14. Ikebana (Tall Blue Vase) -->
+  <g transform="translate(260, 310)">
+      <!-- Vase Body -->
+      <path d="M-12 0 L-8 -60 Q0 -65 8 -60 L12 0 Z" fill="#004085" stroke="#002752" stroke-width="1"/>
+      <ellipse cx="0" cy="0" rx="12" ry="4" fill="#004085" stroke="#002752" stroke-width="1"/>
+      <ellipse cx="0" cy="-60" rx="8" ry="3" fill="#0056b3" stroke="#002752" stroke-width="1"/>
+      <!-- Decorative patterns on vase -->
+      <path d="M-9 -20 Q0 -25 9 -20" fill="none" stroke="#3385ff" stroke-width="0.5" opacity="0.6"/>
+      <path d="M-8 -40 Q0 -45 8 -40" fill="none" stroke="#3385ff" stroke-width="0.5" opacity="0.6"/>
+      
+      <!-- Stems -->
+      <path d="M0 -60 Q-15 -80 -25 -100" fill="none" stroke="#1e3d1a" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M0 -60 L5 -105" fill="none" stroke="#1e3d1a" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M0 -60 Q15 -75 22 -95" fill="none" stroke="#1e3d1a" stroke-width="1.2" stroke-linecap="round"/>
+      
+      <!-- Blue Flowers -->
+      <g transform="translate(-25, -100)">
+          <circle r="6" fill="#80bfff" stroke="#004085" stroke-width="0.5" />
+          <circle r="2" fill="white" opacity="0.4" />
+      </g>
+      <g transform="translate(5, -105)">
+          <circle r="5" fill="#80bfff" stroke="#004085" stroke-width="0.5" />
+          <circle r="1.5" fill="white" opacity="0.4" />
+      </g>
+      <g transform="translate(22, -95)">
+          <circle r="5.5" fill="#80bfff" stroke="#004085" stroke-width="0.5" />
+          <circle r="1.8" fill="white" opacity="0.4" />
+      </g>
+  </g>
+
+
 
   <!-- TOP RIGHT (Glasses) -->
-  <!-- 7 -->
-  <g transform="translate(500, 250)">
+  <!-- 9 -->
+  <g transform="translate(500, 290)">
       <path d="M30 15 q0 40 20 40 q20 0 20 -40" stroke="black" stroke-width="2" fill="none"/>
       <line x1="50" y1="55" x2="50" y2="85" stroke="black" stroke-width="2"/>
       <line x1="35" y1="85" x2="65" y2="85" stroke="black" stroke-width="2"/>
   </g>
-  <!-- 8 -->
-  <g transform="translate(550, 290) scale(0.9)">
+  <!-- 10 -->
+  <g transform="translate(570, 297) scale(0.9)">
       <path d="M35 25 q0 30 15 30 q15 0 15 -30" stroke="black" stroke-width="2" fill="none"/>
       <line x1="50" y1="55" x2="50" y2="85" stroke="black" stroke-width="2"/>
       <line x1="35" y1="85" x2="65" y2="85" stroke="black" stroke-width="2"/>
   </g>
-  <!-- 9 -->
-  <g transform="translate(590, 250) scale(0.8)">
-      <path d="M35 15 L42 85 L58 85 L65 15" stroke="black" stroke-width="2" fill="none"/>
+  <!-- 11 -->
+  <g transform="translate(545, 240) scale(0.8)">
+      <path d="M38 35 q0 20 12 20 q12 0 12 -20" stroke="black" stroke-width="2" fill="none"/>
+      <line x1="50" y1="55" x2="50" y2="85" stroke="black" stroke-width="2"/>
+      <line x1="42" y1="85" x2="58" y2="85" stroke="black" stroke-width="2"/>
   </g>
+
+  <!-- Place Card (Jmenovka) -->
+  <g transform="translate(700, 230)">
+      <rect x="-35" y="-15" width="70" height="40" fill="white" stroke="black" stroke-width="1.5" rx="2"/>
+      <text x="0" y="10" text-anchor="middle" font-family="serif" font-size="12" font-style="italic" fill="black">Jméno</text>
+  </g>
+
   
   
   <!-- LABELS -->
-  <!-- 1 Plate --> <g transform="translate(440, 520)"><circle r="15" class="label-circle"/><text class="label-text">1</text></g>
-  <!-- 12 Plate --> <g transform="translate(480, 480)"><circle r="15" class="label-circle"/><text class="label-text">12</text></g>
+  <!-- 1 Plate --> <g transform="translate(500, 530)"><circle r="15" class="label-circle"/><text class="label-text">1</text></g>
+  <!-- 2 Plate --> <g transform="translate(480, 480)"><circle r="15" class="label-circle"/><text class="label-text">2</text></g>
   <!-- Forks -->
-  <!-- 2 --> <g transform="translate(280, 550)"><circle r="15" class="label-circle"/><text class="label-text">2</text></g>
-  <!-- 3 --> <g transform="translate(240, 550)"><circle r="15" class="label-circle"/><text class="label-text">3</text></g>
-  <!-- 4 --> <g transform="translate(200, 550)"><circle r="15" class="label-circle"/><text class="label-text">4</text></g>
+  <!-- 5 --> <g transform="translate(320, 550)"><circle r="15" class="label-circle"/><text class="label-text">5</text></g>
+  <!-- 7 --> <g transform="translate(270, 550)"><circle r="15" class="label-circle"/><text class="label-text">7</text></g>
+  <!-- 14 --> <g transform="translate(140, 500)"><circle r="15" class="label-circle"/><text class="label-text">14</text></g>
   
   <!-- Knives/Spoon (Shifted) -->
-  <!-- 2 --> <g transform="translate(580, 550)"><circle r="15" class="label-circle"/><text class="label-text">2</text></g>
-  <!-- 5 --> <g transform="translate(650, 550)"><circle r="15" class="label-circle"/><text class="label-text">5</text></g>
-  <!-- 3 --> <g transform="translate(615, 550)"><circle r="15" class="label-circle"/><text class="label-text">3</text></g>
-  <!-- 4 --> <g transform="translate(685, 550)"><circle r="15" class="label-circle"/><text class="label-text">4</text></g>
+  <!-- 5 --> <g transform="translate(550, 550)"><circle r="15" class="label-circle"/><text class="label-text">5</text></g>
+  <!-- 7 --> <g transform="translate(620, 550)"><circle r="15" class="label-circle"/><text class="label-text">7</text></g>
+  <!-- 6 --> <g transform="translate(585, 550)"><circle r="15" class="label-circle"/><text class="label-text">6</text></g>
   
-  <!-- Bread Plate 6 -->
-  <g transform="translate(120, 350)"><circle r="15" class="label-circle"/><text class="label-text">6</text></g>
+  <!-- Bread Plate 12 -->
+  <g transform="translate(155, 350)"><circle r="15" class="label-circle"/><text class="label-text">12</text></g>
+  
+  <!-- 13 --> <g transform="translate(250, 350)"><circle r="15" class="label-circle"/><text class="label-text">13</text></g>
+  <!-- 15 --> <g transform="translate(290, 300)"><circle r="15" class="label-circle"/><text class="label-text">15</text></g>
   
   <!-- Dessert -->
-  <!-- 11 --> <g transform="translate(380, 320)"><circle r="15" class="label-circle"/><text class="label-text">11</text></g>
+  <!-- 8 --> <g transform="translate(380, 320)"><circle r="15" class="label-circle"/><text class="label-text">8</text></g>
   
   <!-- Glasses LABELS - ADJUSTED/FIXED -->
   <!-- Fixed positions above elements -->
-  <!-- 7 (Main) - Glass at 500,250. Top ~265. Label at 500, 225. -->
-  <g transform="translate(550, 225)"><circle r="15" class="label-circle"/><text class="label-text">7</text></g>
-  <!-- 8 (Starter) - Glass at 550,290. Top ~315. Label at 550, 275. -->
-  <g transform="translate(630, 340)"><circle r="15" class="label-circle"/><text class="label-text">8</text></g>
-  <!-- 9 (Liqueur) - Glass at 590,260. Top ~290. Label at 590, 250. -->
-  <g transform="translate(650, 250)"><circle r="15" class="label-circle"/><text class="label-text">9</text></g>
+  <!-- 9 (Main) - Glass at 500,250. Top ~265. Label at 500, 225. -->
+  <g transform="translate(550, 275)"><circle r="15" class="label-circle"/><text class="label-text">9</text></g>
+  <!-- 10 (Starter) - Glass at 550,290. Top ~315. Label at 550, 275. -->
+  <g transform="translate(650, 300)"><circle r="15" class="label-circle"/><text class="label-text">10</text></g>
+  <!-- 11 (Liqueur) - Glass at 590,260. Top ~290. Label at 590, 250. -->
+  <g transform="translate(605, 250)"><circle r="15" class="label-circle"/><text class="label-text">11</text></g>
+<!-- 16 (Liqueur) - Glass at 590,260. Top ~290. Label at 590, 250. -->
+  <g transform="translate(720, 280)"><circle r="15" class="label-circle"/><text class="label-text">16</text></g>
 
-  <!-- Napkin 10 --> <g transform="translate(400, 420)"><circle r="15" class="label-circle"/><text class="label-text">10</text></g>
-  
+  <!-- Napkin 10 --> <g transform="translate(400, 420)"><circle r="15" class="label-circle"/><text class="label-text">4</text></g>
+  <!-- Couvert plate 3 --> <g transform="translate(400, 460)"><circle r="15" class="label-circle"/><text class="label-text">3</text></g>
 </svg>

@@ -10,9 +10,9 @@
 \contentsline {subsection}{\numberline {2.7}Pracovní příkaz - obsluha}{14}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Nákres couvertu, legenda}{15}{subsection.2.8}%
 \contentsline {subsection}{\numberline {2.9}Charakteristika celého menu}{16}{subsection.2.9}%
-\contentsline {subsection}{\numberline {2.10}Žádanka na inventář}{17}{subsection.2.10}%
-\contentsline {subsection}{\numberline {2.11}Postup při servisu pokrmů a nápojů}{18}{subsection.2.11}%
-\contentsline {subsection}{\numberline {2.12}Časový harmonogram}{20}{subsection.2.12}%
-\contentsline {subsection}{\numberline {2.13}Vyúčtování}{21}{subsection.2.13}%
-\contentsline {section}{\numberline {3}Závěr}{22}{section.3}%
-\contentsline {section}{\numberline {4}Zdroje}{23}{section.4}%
+\contentsline {subsection}{\numberline {2.10}Žádanka na inventář}{18}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Postup při servisu pokrmů a nápojů}{19}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Časový harmonogram}{21}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Vyúčtování}{22}{subsection.2.13}%
+\contentsline {section}{\numberline {3}Závěr}{23}{section.3}%
+\contentsline {section}{\numberline {4}Zdroje}{24}{section.4}%
